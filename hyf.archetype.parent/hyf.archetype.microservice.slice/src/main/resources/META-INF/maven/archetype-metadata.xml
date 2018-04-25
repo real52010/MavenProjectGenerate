@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor name="miuse-job-archetype">
+	<fileSets>
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory></directory>
+			<includes>
+				<include>.**</include>
+			</includes>
+		</fileSet>
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory>slice</directory>
+			<includes>
+				<include>.**</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+	<requiredProperties>
+<!-- 		<requiredProperty key="package-name" /> -->
+	</requiredProperties>
+</archetype-descriptor>

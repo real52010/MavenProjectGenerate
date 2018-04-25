@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archetype-descriptor name="miuse-job-archetype">
+	<fileSets>
+		<fileSet filtered="true" encoding="UTF-8">
+			<directory></directory>
+			<includes>
+				<include>.**</include>
+			</includes>
+		</fileSet>
+	</fileSets>
+	<requiredProperties>
+		<requiredProperty key="hlejInstallPath" >
+			 <defaultValue>D://hlej</defaultValue>
+		</requiredProperty>
+	</requiredProperties>
+</archetype-descriptor>

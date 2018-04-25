@@ -1,0 +1,48 @@
+{
+	"default": {
+		"javaPackage": "com.hlej.hyf",
+		"version": "4.0.0-SNAPSHOT",
+        "groupId": "com.hlej.hyf",
+        "archetypeGroupId":"com.hlej.hyf",
+        "archetypeVersion": "1.0.1-SNAPSHOT"
+	},
+	"projects": [
+		
+		{
+			"projectDirectory":"D:/MavenProject",
+			"artifactId": "hyf.microserver",
+            "archetypeArtifactId": "hyf.archetype.microservice.pom_root",
+			"children": [
+				{
+					"artifactId": "hyf.basedata.parent",
+                    "archetypeArtifactId": "pom-root",
+                    "children": [
+                        {
+                            "artifactId": "hyf.base.basedata.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        {
+                            "artifactId": "hyf.base.basedata.slice",
+                            "archetypeArtifactId": "hyf.archetype.microservice.slice"
+                        }
+                    ]
+                },
+                
+                {
+					"artifactId": "hyf.commission.parent",
+                    "archetypeArtifactId": "pom-root", 
+                    "children": [
+                        {
+                            "artifactId": "hyf.base.commission.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        {
+                            "artifactId": "hyf.base.commission.slice",
+                            "archetypeArtifactId": "hyf.archetype.microservice.slice"
+                        }
+                    ]
+				}
+			]
+		}
+	]
+}
