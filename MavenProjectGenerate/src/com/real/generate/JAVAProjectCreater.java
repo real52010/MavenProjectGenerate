@@ -1,11 +1,12 @@
 package com.real.generate;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.apache.maven.cli.MavenCli;
-
+import com.google.common.base.Joiner;
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.JsonPath;
 import com.real.beans.MvnProject;
@@ -61,39 +62,45 @@ public class JAVAProjectCreater {
 
 	public static int execute(String workingDirectory, List<String> paramList) throws Exception {
 
-		// try {
-		// Runtime rt = Runtime.getRuntime();
-		// String command = "cmd /c mvn " + Joiner.on(" ").join(paramList.toArray(new
-		// String[paramList.size()]));
-		//
-		// System.out.println("==========================================");
-		// System.out.println(command);
-		// System.out.println("==========================================");
-		// Process pr = rt.exec(command,null,new File(workingDirectory)); // cmd /c calc
-		//
-		// BufferedReader input = new BufferedReader(new
-		// InputStreamReader(pr.getInputStream(), "GBK"));
-		//
-		// String line = null;
-		//
-		// while ((line = input.readLine()) != null) {
-		// System.out.println(line);
-		// }
-		//
-		// int exitVal = pr.waitFor();
-		// System.out.println("Exited with error code " + exitVal);
-		// return exitVal;
-		//
-		// } catch (Exception e) {
-		// System.out.println(e.toString());
-		// e.printStackTrace();
-		// }
-		// return 0;
+		 try {
+		 Runtime rt = Runtime.getRuntime();
+		 String command = "cmd /c mvn " + Joiner.on(" ").join(paramList.toArray(new
+		 String[paramList.size()]));
+		
+		 System.out.println("==========================================");
+		 System.out.println(command);
+		 System.out.println("==========================================");
+		 Process pr = rt.exec(command,null,new File(workingDirectory)); // cmd /c calc
+		
+		 BufferedReader input = new BufferedReader(new
+		 InputStreamReader(pr.getInputStream(), "GBK"));
+		
+		 String line = null;
+		
+		 while ((line = input.readLine()) != null) {
+		 System.out.println(line);
+		 }
+		
+		 int exitVal = pr.waitFor();
+		 System.out.println("Exited with error code " + exitVal);
+		 return exitVal;
+		
+		 } catch (Exception e) {
+		 System.out.println(e.toString());
+		 e.printStackTrace();
+		 }
+		 return 0;
 //		return Launcher.mainWithExitCode(paramList.toArray(new String[paramList.size()]));
-
-		 MavenCli cli = new MavenCli();
-		 return cli.doMain(paramList.toArray(new String[paramList.size()]),
-		 workingDirectory, System.out, System.err);
+		
+//		System.out.println("================================================================");
+//		System.out.println(Joiner.on(" ").join(paramList.toArray(new String[paramList.size()])));
+//		System.out.println("================================================================");
+//		
+//		
+//		
+//		 MavenCli cli = new MavenCli();
+//		 return cli.doMain(paramList.toArray(new String[paramList.size()]),
+//		 workingDirectory, System.out, System.err);
 
 	}
 
@@ -140,7 +147,7 @@ public class JAVAProjectCreater {
 		if ("pom-root".equals(project.getArchetypeArtifactId())) {
 			paramList.add("-DarchetypeGroupId=org.codehaus.mojo.archetypes");
 		} else {
-//			paramList.add("-X");
+			paramList.add("-X");
 			paramList.add("-B");
 		}
 		// paramList.add("archetype:generate");
