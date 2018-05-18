@@ -19,6 +19,8 @@
                     "children": [
                         {
                             "artifactId": "hyf.base.commission.service",
+                            "description": "佣金基础服务",
+                            "serviceGroup": "hyf.commission.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         },
                         {
@@ -33,6 +35,8 @@
                     "children": [
                         {
                             "artifactId": "hyf.base.requirement.service",
+                            "description": "立项基础服务",
+                            "serviceGroup": "hyf.requirement.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         },
                         {
@@ -47,6 +51,8 @@
                     "children": [
                         {
                             "artifactId": "hyf.base.product.service",
+                            "description": "产品基础服务",
+                            "serviceGroup": "hyf.product.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         },
                         {
@@ -61,6 +67,8 @@
                     "children": [
                         {
                             "artifactId": "hyf.base.activity.service",
+                            "description": "活动基础服务",
+                            "serviceGroup": "hyf.activity.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         },
                         {
@@ -75,6 +83,8 @@
                     "children": [
                         {
                             "artifactId": "hyf.base.developer.service",
+                            "description": "开发商基础服务",
+                            "serviceGroup": "hyf.bussiness.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         },
                         {
@@ -89,6 +99,8 @@
                     "children": [
                         {
                             "artifactId": "hyf.base.trusteeship.service",
+                            "description": "中顺易基础服务",
+                            "serviceGroup": "hyf.order.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         },
                         {
@@ -97,6 +109,8 @@
                         },
                         {
                             "artifactId": "hyf.combi.trusteeship.order.service",
+                            "description": "中顺易组合订单服务",
+                            "serviceGroup": "hyf.order.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         },
                         {
@@ -105,6 +119,8 @@
                         },
                         {
                             "artifactId": "hyf.base.mjphloan.service",
+                            "description": "迈今普惠基础服务",
+                            "serviceGroup": "hyf.order.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         },
                         {
@@ -113,6 +129,8 @@
                         },
                         {
                             "artifactId": "hyf.base.tlprepaid.service",
+                            "description": "预付费卡基础服务",
+                            "serviceGroup": "hyf.order.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         },
                         {
@@ -121,6 +139,8 @@
                         },
                         {
                             "artifactId": "hyf.combi.order.service",
+                            "description": "交易所订单组合服务",
+                            "serviceGroup": "hyf.order.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         },
                         {
@@ -129,6 +149,8 @@
                         },
                         {
                             "artifactId": "hyf.combi.order.task",
+                            "description": "交易所订单定时任务",
+                            "serviceGroup": "hyf.order.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         }
                     ]
@@ -139,6 +161,8 @@
                     "children": [
                         {
                             "artifactId": "hyf.base.payment.service",
+                            "description": "交易所充值基础服务",
+                            "serviceGroup": "hyf.payment.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         },
                         {
@@ -147,10 +171,14 @@
                         },
                         {
                             "artifactId": "hyf.base.payment.task",
+                            "description": "交易所充值定时任务",
+                            "serviceGroup": "hyf.payment.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         },
                         {
                             "artifactId": "hyf.combi.payment.service",
+                            "description": "交易所充值组合服务",
+                            "serviceGroup": "hyf.payment.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         },
                         {
@@ -159,6 +187,8 @@
                         },
                         {
                             "artifactId": "hyf.combi.payment.task",
+                            "description": "交易所充值定时任务",
+                            "serviceGroup": "hyf.payment.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         }
                     ]
@@ -169,6 +199,8 @@
                     "children": [
                         {
                             "artifactId": "hyf.base.loan.little.service",
+                            "description": "小贷基础服务",
+                            "serviceGroup": "hyf.loan.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         },
                         {
@@ -177,6 +209,8 @@
                         },
                         {
                             "artifactId": "hyf.base.loan.loanten.service",
+                            "description": "十年贷基础服务",
+                            "serviceGroup": "hyf.loan.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         },
                         {
@@ -185,6 +219,8 @@
                         },
                         {
                             "artifactId": "hyf.base.loan.loantimer.service",
+                            "description": "小贷定时任务",
+                            "serviceGroup": "hyf.loan.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         },
                         {
@@ -199,6 +235,8 @@
                     "children": [
                         {
                             "artifactId": "hyf.base.withdraw.service",
+                            "description": "提现基础服务",
+                            "serviceGroup": "hyf.withdraw.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         },
                         {
@@ -213,6 +251,8 @@
                     "children": [
                         {
                             "artifactId": "hyf.base.baccount.service",
+                            "description": "B端账号基础服务",
+                            "serviceGroup": "hyf.baccount.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         },
                         {
@@ -221,6 +261,8 @@
                         },
                         {
                             "artifactId": "hyf.base.buserinfo.service",
+                            "description": "B端用户信息基础服务",
+                            "serviceGroup": "hyf.baccount.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         },
                         {

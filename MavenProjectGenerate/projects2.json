@@ -1,0 +1,291 @@
+{
+	"default": {
+		"javaPackage": "com.huilian.hyf",
+		"version": "4.0.0-SNAPSHOT",
+        "groupId": "com.huilian.hyf",
+        "archetypeGroupId":"com.huilian.hyf",
+        "archetypeVersion": "1.0.1-SNAPSHOT"
+	},
+	"projects": [
+		
+		{
+			"projectDirectory":"D:/workspace_new",
+			"artifactId": "hyf.microserver",
+            "archetypeArtifactId": "hyf.archetype.microservice.pom_root",
+			"children": [
+                {
+					"artifactId": "hyf.commission.parent",
+                    "archetypeArtifactId": "pom-root", 
+                    "children": [
+                        {
+                            "artifactId": "hyf.base.commission.service",
+                            "description": "佣金基础服务",
+                            "serviceGroup": "hyf.commission.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        {
+                            "artifactId": "hyf.base.commission.slice",
+                            "archetypeArtifactId": "hyf.archetype.microservice.slice"
+                        }
+                    ]
+                },
+                {
+					"artifactId": "hyf.requirement.parent",
+                    "archetypeArtifactId": "pom-root", 
+                    "children": [
+                        {
+                            "artifactId": "hyf.base.requirement.service",
+                            "description": "立项基础服务",
+                            "serviceGroup": "hyf.requirement.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        {
+                            "artifactId": "hyf.base.requirement.slice",
+                            "archetypeArtifactId": "hyf.archetype.microservice.slice"
+                        }
+                    ]
+				},
+                {
+					"artifactId": "hyf.product.parent",
+                    "archetypeArtifactId": "pom-root", 
+                    "children": [
+                        {
+                            "artifactId": "hyf.base.product.service",
+                            "description": "产品基础服务",
+                            "serviceGroup": "hyf.product.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        {
+                            "artifactId": "hyf.base.product.slice",
+                            "archetypeArtifactId": "hyf.archetype.microservice.slice"
+                        }
+                    ]
+				},
+                {
+					"artifactId": "hyf.activity.parent",
+                    "archetypeArtifactId": "pom-root", 
+                    "children": [
+                        {
+                            "artifactId": "hyf.base.activity.service",
+                            "description": "活动基础服务",
+                            "serviceGroup": "hyf.activity.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        {
+                            "artifactId": "hyf.base.activity.slice",
+                            "archetypeArtifactId": "hyf.archetype.microservice.slice"
+                        }
+                    ]
+				},
+                {
+					"artifactId": "hyf.bussiness.parent",
+                    "archetypeArtifactId": "pom-root", 
+                    "children": [
+                        {
+                            "artifactId": "hyf.base.developer.service",
+                            "description": "开发商基础服务",
+                            "serviceGroup": "hyf.bussiness.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        {
+                            "artifactId": "hyf.base.developer.slice",
+                            "archetypeArtifactId": "hyf.archetype.microservice.slice"
+                        }
+                    ]
+				},
+                {
+					"artifactId": "hyf.order.parent",
+                    "archetypeArtifactId": "pom-root", 
+                    "children": [
+                        {
+                            "artifactId": "hyf.base.trusteeship.service",
+                            "description": "中顺易基础服务",
+                            "serviceGroup": "hyf.order.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        {
+                            "artifactId": "hyf.base.trusteeship.slice",
+                            "archetypeArtifactId": "hyf.archetype.microservice.slice"
+                        },
+                        {
+                            "artifactId": "hyf.combi.trusteeship.order.service",
+                            "description": "中顺易组合订单服务",
+                            "serviceGroup": "hyf.order.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        {
+                            "artifactId": "hyf.combi.trusteeship.order.slice",
+                            "archetypeArtifactId": "hyf.archetype.microservice.slice"
+                        },
+                        {
+                            "artifactId": "hyf.base.mjphloan.service",
+                            "description": "迈今普惠基础服务",
+                            "serviceGroup": "hyf.order.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        {
+                            "artifactId": "hyf.base.mjphloan.slice",
+                            "archetypeArtifactId": "hyf.archetype.microservice.slice"
+                        },
+                        {
+                            "artifactId": "hyf.base.tlprepaid.service",
+                            "description": "预付费卡基础服务",
+                            "serviceGroup": "hyf.order.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        {
+                            "artifactId": "hyf.base.tlprepaid.slice",
+                            "archetypeArtifactId": "hyf.archetype.microservice.slice"
+                        },
+                        {
+                            "artifactId": "hyf.combi.order.service",
+                            "description": "交易所订单组合服务",
+                            "serviceGroup": "hyf.order.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        {
+                            "artifactId": "hyf.combi.order.slice",
+                            "archetypeArtifactId": "hyf.archetype.microservice.slice"
+                        },
+                        {
+                            "artifactId": "hyf.combi.order.task",
+                            "description": "交易所订单定时任务",
+                            "serviceGroup": "hyf.order.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        }
+                    ]
+				},
+                {
+					"artifactId": "hyf.payment.parent",
+                    "archetypeArtifactId": "pom-root", 
+                    "children": [
+                        {
+                            "artifactId": "hyf.base.payment.service",
+                            "description": "交易所充值基础服务",
+                            "serviceGroup": "hyf.payment.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        {
+                            "artifactId": "hyf.base.payment.slice",
+                            "archetypeArtifactId": "hyf.archetype.microservice.slice"
+                        },
+                        {
+                            "artifactId": "hyf.base.payment.task",
+                            "description": "交易所充值定时任务",
+                            "serviceGroup": "hyf.payment.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        {
+                            "artifactId": "hyf.combi.payment.service",
+                            "description": "交易所充值组合服务",
+                            "serviceGroup": "hyf.payment.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        {
+                            "artifactId": "hyf.combi.payment.slice",
+                            "archetypeArtifactId": "hyf.archetype.microservice.slice"
+                        },
+                        {
+                            "artifactId": "hyf.combi.payment.task",
+                            "description": "交易所充值定时任务",
+                            "serviceGroup": "hyf.payment.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        }
+                    ]
+				},
+                {
+					"artifactId": "hyf.loan.parent",
+                    "archetypeArtifactId": "pom-root", 
+                    "children": [
+                        {
+                            "artifactId": "hyf.base.loan.little.service",
+                            "description": "小贷基础服务",
+                            "serviceGroup": "hyf.loan.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        {
+                            "artifactId": "hyf.base.loan.little.slice",
+                            "archetypeArtifactId": "hyf.archetype.microservice.slice"
+                        },
+                        {
+                            "artifactId": "hyf.base.loan.loanten.service",
+                            "description": "十年贷基础服务",
+                            "serviceGroup": "hyf.loan.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        {
+                            "artifactId": "hyf.base.loan.loanten.slice",
+                            "archetypeArtifactId": "hyf.archetype.microservice.slice"
+                        },
+                        {
+                            "artifactId": "hyf.base.loan.loantimer.service",
+                            "description": "小贷定时任务",
+                            "serviceGroup": "hyf.loan.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        {
+                            "artifactId": "hyf.base.loan.loantimer.slice",
+                            "archetypeArtifactId": "hyf.archetype.microservice.slice"
+                        }
+                    ]
+				},
+                {
+					"artifactId": "hyf.withdraw.parent",
+                    "archetypeArtifactId": "pom-root", 
+                    "children": [
+                        {
+                            "artifactId": "hyf.base.withdraw.service",
+                            "description": "提现基础服务",
+                            "serviceGroup": "hyf.withdraw.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        {
+                            "artifactId": "hyf.base.withdraw.slice",
+                            "archetypeArtifactId": "hyf.archetype.microservice.slice"
+                        }
+                    ]
+				},
+                {
+					"artifactId": "hyf.baccount.parent",
+                    "archetypeArtifactId": "pom-root", 
+                    "children": [
+                        {
+                            "artifactId": "hyf.base.baccount.service",
+                            "description": "B端账号基础服务",
+                            "serviceGroup": "hyf.baccount.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        {
+                            "artifactId": "hyf.base.baccount.slice",
+                            "archetypeArtifactId": "hyf.archetype.microservice.slice"
+                        },
+                        {
+                            "artifactId": "hyf.base.buserinfo.service",
+                            "description": "B端用户信息基础服务",
+                            "serviceGroup": "hyf.baccount.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        {
+                            "artifactId": "hyf.base.buserinfo.slice",
+                            "archetypeArtifactId": "hyf.archetype.microservice.slice"
+                        }
+                    ]
+				},
+                {
+					"artifactId": "hyf.saleman.parent",
+                    "archetypeArtifactId": "pom-root", 
+                    "children": [
+                        {
+                            "artifactId": "hyf.base.saleman.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        {
+                            "artifactId": "hyf.base.saleman.slice",
+                            "archetypeArtifactId": "hyf.archetype.microservice.slice"
+                        }
+                    ]
+				}
+			]
+		}
+	]
+}

@@ -48,6 +48,11 @@ public class JAVAProjectCreater {
 		// paramList.add("-DarchetypeArtifactId=pom-root");
 		// paramList.add("-DinteractiveMode=false");
 		//
+//		File file = new File("D:\\workspace_new\\hyf.microserver");
+//		if(!file.delete()) {
+//			System.err.println("ÎÄ¼þÉ¾³ýÊ§°Ü");
+//			System.exit(1);
+//		}
 		Configuration conf = Configuration.builder().build();
 		MvnProject[] array = JsonPath.using(conf).parse(new File("projects.json")).read("$.projects",
 				MvnProject[].class);
@@ -62,45 +67,45 @@ public class JAVAProjectCreater {
 
 	public static int execute(String workingDirectory, List<String> paramList) throws Exception {
 
-		 try {
-		 Runtime rt = Runtime.getRuntime();
-		 String command = "cmd /c mvn " + Joiner.on(" ").join(paramList.toArray(new
-		 String[paramList.size()]));
-		
-		 System.out.println("==========================================");
-		 System.out.println(command);
-		 System.out.println("==========================================");
-		 Process pr = rt.exec(command,null,new File(workingDirectory)); // cmd /c calc
-		
-		 BufferedReader input = new BufferedReader(new
-		 InputStreamReader(pr.getInputStream(), "GBK"));
-		
-		 String line = null;
-		
-		 while ((line = input.readLine()) != null) {
-		 System.out.println(line);
-		 }
-		
-		 int exitVal = pr.waitFor();
-		 System.out.println("Exited with error code " + exitVal);
-		 return exitVal;
-		
-		 } catch (Exception e) {
-		 System.out.println(e.toString());
-		 e.printStackTrace();
-		 }
-		 return 0;
-//		return Launcher.mainWithExitCode(paramList.toArray(new String[paramList.size()]));
-		
-//		System.out.println("================================================================");
-//		System.out.println(Joiner.on(" ").join(paramList.toArray(new String[paramList.size()])));
-//		System.out.println("================================================================");
-//		
-//		
-//		
-//		 MavenCli cli = new MavenCli();
-//		 return cli.doMain(paramList.toArray(new String[paramList.size()]),
-//		 workingDirectory, System.out, System.err);
+		try {
+			Runtime rt = Runtime.getRuntime();
+			String command = "cmd /c mvn " + Joiner.on(" ").join(paramList.toArray(new String[paramList.size()]));
+
+			System.out.println("==========================================");
+			System.out.println(command);
+			System.out.println("==========================================");
+			Process pr = rt.exec(command, null, new File(workingDirectory)); // cmd /c calc
+
+			BufferedReader input = new BufferedReader(new InputStreamReader(pr.getInputStream(), "GBK"));
+
+			String line = null;
+
+			while ((line = input.readLine()) != null) {
+				System.out.println(line);
+			}
+
+			int exitVal = pr.waitFor();
+			System.out.println("Exited with error code " + exitVal);
+			return exitVal;
+
+		} catch (Exception e) {
+			System.out.println(e.toString());
+			e.printStackTrace();
+		}
+		return 0;
+		// return Launcher.mainWithExitCode(paramList.toArray(new
+		// String[paramList.size()]));
+
+		// System.out.println("================================================================");
+		// System.out.println(Joiner.on(" ").join(paramList.toArray(new
+		// String[paramList.size()])));
+		// System.out.println("================================================================");
+		//
+		//
+		//
+		// MavenCli cli = new MavenCli();
+		// return cli.doMain(paramList.toArray(new String[paramList.size()]),
+		// workingDirectory, System.out, System.err);
 
 	}
 
@@ -110,10 +115,10 @@ public class JAVAProjectCreater {
 			project.setVersion(project.getVersion() == null ? defaultCfg.getVersion() : project.getVersion());
 			project.setJavaPackage(
 					project.getJavaPackage() == null ? defaultCfg.getJavaPackage() : project.getJavaPackage());
-			project.setArchetypeGroupId(
-					project.getArchetypeGroupId() == null ? defaultCfg.getArchetypeGroupId() : project.getArchetypeGroupId());
-			project.setArchetypeVersion(
-					project.getArchetypeVersion() == null ? defaultCfg.getArchetypeVersion() : project.getArchetypeVersion());
+			project.setArchetypeGroupId(project.getArchetypeGroupId() == null ? defaultCfg.getArchetypeGroupId()
+					: project.getArchetypeGroupId());
+			project.setArchetypeVersion(project.getArchetypeVersion() == null ? defaultCfg.getArchetypeVersion()
+					: project.getArchetypeVersion());
 
 		}
 		if (project.getProjectDirectory() == null) {
@@ -133,12 +138,20 @@ public class JAVAProjectCreater {
 		paramList.add("-DgroupId=" + project.getGroupId());
 		paramList.add("-DartifactId=" + project.getArtifactId());
 		paramList.add("-DarchetypeArtifactId=" + project.getArchetypeArtifactId());
-		if(project.getArchetypeArtifactId().startsWith("hyf")) {
-			paramList.add("-DarchetypeVersion="+project.getArchetypeVersion());
-			paramList.add("-DarchetypeGroupId="+project.getArchetypeGroupId());
-			
+		paramList.add("-Dname=" + (project.getName() == null ? project.getArtifactId() : project.getName()));
+		paramList.add("-Ddescription="
+				+ (project.getDescription() == null ? project.getArtifactId() : project.getDescription()));
+		String serverGroup = project.getServiceGroup();
+		if (serverGroup == null && project.getParent() != null) {
+			project.setServiceGroup(project.getParent().getArtifactId());
 		}
-		
+		paramList.add("-DserviceGroup="
+				+ (project.getServiceGroup() == null ? project.getArtifactId() : project.getServiceGroup()));
+		if (project.getArchetypeArtifactId().startsWith("hyf")) {
+			paramList.add("-DarchetypeVersion=" + project.getArchetypeVersion());
+			paramList.add("-DarchetypeGroupId=" + project.getArchetypeGroupId());
+		}
+
 		paramList.add("-Dversion=" + project.getVersion());
 		paramList.add("-Dpackage=" + project.getJavaPackage());
 
@@ -157,7 +170,10 @@ public class JAVAProjectCreater {
 		// paramList.add("-Dversion=" + version);
 		// paramList.add("-Dpackage=" + javaPackage);
 
-		execute(project.getProjectDirectory(), paramList);
+		int returnCode=execute(project.getProjectDirectory(), paramList);
+		if(returnCode>0) {
+			System.exit(returnCode);
+		}
 		// int extCode = Launcher.mainWithExitCode(paramList.toArray(new
 		// String[paramList.size()]));
 		// String command=Joiner.on(" ").join(paramList.toArray(new
@@ -168,6 +184,7 @@ public class JAVAProjectCreater {
 		MvnProject[] children = project.getChildren();
 		if (children != null) {
 			for (MvnProject mvnProject : children) {
+				mvnProject.setParent(mvnProject);
 				doCreate(project, mvnProject, defaultCfg);
 			}
 

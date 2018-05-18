@@ -9,7 +9,10 @@ public class MvnProject {
 	String javaPackage;
 	String archetypeVersion;
 	String archetypeGroupId;
-	
+	String name;
+	String description;
+	String serviceGroup;
+	MvnProject parent;
 	MvnProject children[];
 
 	public String getProjectDirectory() {
@@ -85,7 +88,39 @@ public class MvnProject {
 	public void setArchetypeVersion(String archetypeVersion) {
 		this.archetypeVersion = archetypeVersion;
 	}
- 
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public MvnProject getParent() {
+		return parent;
+	}
+
+	public void setParent(MvnProject parent) {
+		this.parent = parent;
+	}
+
+	public String getServiceGroup() {
+		return serviceGroup;
+	}
+
+	public void setServiceGroup(String serviceGroup) {
+		this.serviceGroup = serviceGroup;
+	}
+	
 	
 	
 }

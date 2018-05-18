@@ -34,6 +34,9 @@
 		</fileSet>
 	</fileSets>
 	<requiredProperties>
-<!-- 		<requiredProperty key="package-name" /> -->
+		<requiredProperty key="name" defaultValue="name"/>
+		<requiredProperty key="description"  defaultValue="description"/>
+		<requiredProperty key="serviceGroup"  defaultValue="defaultService"/>
+		
 	</requiredProperties>
 </archetype-descriptor>
