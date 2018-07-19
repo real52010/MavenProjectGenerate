@@ -5,7 +5,14 @@
 	<name>${name}</name>
 	<description>${description}</description>
 	<packaging>jar</packaging>
-	
+	<dependencies>
+		<dependency>
+			<groupId>${groupId}</groupId>
+			<artifactId>${artifactId}.slice</artifactId>
+			<version>${hlej.version}</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
@@ -17,9 +24,6 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-clean-plugin</artifactId>
-				<configuration>
-					<directory>${profiles.install.path}/platform/hyf/${serviceGroup}/${project.artifactId}</directory>
-				</configuration>
 			</plugin>
 
 			<plugin>
@@ -33,11 +37,6 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
-				<configuration>
-
-					<finalName>${project.artifactId}</finalName>
-					<outputDirectory>${profiles.install.path}/platform/hyf/${serviceGroup}</outputDirectory>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>

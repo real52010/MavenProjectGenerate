@@ -1,7 +1,7 @@
 {
 	"default": {
 		"javaPackage": "com.huilian.hyf",
-		"version": "4.0.0-SNAPSHOT",
+		"version": "1.0.0-RELEASE",
         "groupId": "com.huilian.hyf",
         "archetypeGroupId":"com.huilian.hyf",
         "archetypeVersion": "1.0.1-SNAPSHOT"
@@ -9,7 +9,7 @@
 	"projects": [
 		
 		{
-			"projectDirectory":"D:/workspace_new",
+			"projectDirectory":"D:/workspace_new2",
 			"artifactId": "hyf.microserver",
             "archetypeArtifactId": "hyf.archetype.microservice.pom_root",
 			"children": [
@@ -128,13 +128,13 @@
                             "archetypeArtifactId": "hyf.archetype.microservice.slice"
                         },
                         {
-                            "artifactId": "hyf.base.tlprepaid.service",
+                            "artifactId": "hyf.combi.tlprepaid.service",
                             "description": "预付费卡基础服务",
                             "serviceGroup": "hyf.order.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         },
                         {
-                            "artifactId": "hyf.base.tlprepaid.slice",
+                            "artifactId": "hyf.combi.tlprepaid.slice",
                             "archetypeArtifactId": "hyf.archetype.microservice.slice"
                         },
                         {
@@ -159,6 +159,12 @@
 					"artifactId": "hyf.payment.parent",
                     "archetypeArtifactId": "pom-root", 
                     "children": [
+                   		{
+                            "artifactId": "hyf.base.payment.common",
+                            "description": "交易所充值基础服务公共包",
+                            "serviceGroup": "hyf.payment.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
                         {
                             "artifactId": "hyf.base.payment.service",
                             "description": "交易所充值基础服务",
@@ -172,6 +178,13 @@
                         {
                             "artifactId": "hyf.base.payment.task",
                             "description": "交易所充值定时任务",
+                            "serviceGroup": "hyf.payment.service",
+                            "archetypeArtifactId": "hyf.archetype.microservice.service"
+                        },
+                        
+                        {
+                            "artifactId": "hyf.combi.payment.common",
+                            "description": "交易所充值基础服务公共包",
                             "serviceGroup": "hyf.payment.service",
                             "archetypeArtifactId": "hyf.archetype.microservice.service"
                         },

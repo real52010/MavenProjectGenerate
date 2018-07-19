@@ -169,7 +169,10 @@ public class JAVAProjectCreater {
 		// paramList.add("-DarchetypeArtifactId=" + archetypeArtifactId);
 		// paramList.add("-Dversion=" + version);
 		// paramList.add("-Dpackage=" + javaPackage);
-
+//		if(project.getArtifactId().endsWith(".service")||project.getArtifactId().endsWith(".slice")||project.getArtifactId().endsWith(".task"))
+//		{
+//			System.out.println(project.getProjectDirectory()+"/"+project.getArtifactId());
+//		}
 		int returnCode=execute(project.getProjectDirectory(), paramList);
 		if(returnCode>0) {
 			System.exit(returnCode);
