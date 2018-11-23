@@ -30,8 +30,8 @@ public class App {
 		// System.out.println(Pattern.matches(feePattern, "111100.00"));
 		String startDate = null;
 		String endDate = null;
-		 startDate = "20180818";
-		 endDate = "20180831";
+		 startDate = "20181015";
+		 endDate = "20181015";
 		String billDir = "D:\\tlorder\\billDir";
 		String scriptDir = "D:\\tlorder\\scriptDir";
 		System.out.println("账单地址:"+billDir);
